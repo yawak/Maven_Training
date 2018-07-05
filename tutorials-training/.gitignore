@@ -1,0 +1,28 @@
+# Ignore .iml files
+*.iml
+
+# Ignore .idea folder
+.idea/*
+!.idea/runConfigurations
+.idea/
+
+# Ignore Atlassian Intellij IDEA plugin config file
+atlassian-ide-plugin.xml
+
+# Ignore target folders
+target
+
+# Ignore Eclipse project files
+.settings/
+.project
+.classpath
+
+# Ignore Netbeans files
+nbactions.xml
+nb-configuration.xml
+
+# some random test output files
+release.properties
+*.versionsBackup
+*.releaseBackup
+*.DS_Store
