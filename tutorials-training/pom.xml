@@ -19,9 +19,18 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.1</version>
         <executions>
+
+          <!--
+          Clean Lifecycle
+          -->
           <execution>
             <id>id.pre-clean</id>
             <phase>pre-clean</phase>
@@ -57,6 +66,132 @@
             <configuration>
               <tasks>
                 <echo>post-clean phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <!--
+          Default (or Build) Lifecycle sample
+          -->
+          <execution>
+            <id>id.validate</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>validate phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>compile phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>test phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>package phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>deploy phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <!--
+          Site Lifecycle
+          Note:
+              - Currently not working with Maven 3.5.3
+              - Workaround: https://stackoverflow.com/questions/51091539/maven-site-plugins-3-3-java-lang-classnotfoundexception-org-apache-maven-doxia
+          -->
+          <execution>
+            <id>id.pre-site</id>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>pre-site phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.site</id>
+            <phase>site</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>site phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.post-site</id>
+            <phase>post-site</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>post-site phase</echo>
+              </tasks>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>id.site-deploy</id>
+            <phase>site-deploy</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo>site-deploy phase</echo>
               </tasks>
             </configuration>
           </execution>
